@@ -1,0 +1,24 @@
+/**
+ * Main
+ */
+
+.bs-main-contents {
+  float: left;
+  width: 860px;
+  margin: 20px 0 160px;
+  padding: 0;
+
+  @include bs-mq() {
+    width: 100%;
+  }
+}
+
+#Home .bs-main-contents {
+  margin: 40px 0;
+
+  @include bs-mq() {
+    float: none;
+    padding: 0;
+    margin: 40px 0;
+  }
+}

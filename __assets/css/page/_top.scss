@@ -1,0 +1,82 @@
+/**
+ * Top Page
+ */
+
+/* Main Image
+----------------------------------------------- */
+/*
+.bs-main-image {
+  margin: 0 auto;
+  padding: 0;
+  display: none;
+  z-index: 0;
+}
+
+.bx-wrapper {
+  margin: 0 auto;
+  max-height: 560px;
+  overflow: hidden;
+}
+
+.bx-controls {
+  display: none;
+}
+*/
+
+/* Info
+----------------------------------------------- */
+/*
+.bs-info {
+  width: 100%;
+  margin-bottom: 100px;
+
+  h2 {
+    font-weight: bold !important;
+  }
+  @include bs-mq() {
+    margin-bottom: 100px;
+  }
+}
+*/
+
+/* Top Post To List
+----------------------------------------------- */
+
+.bs-blog-post-to-list {
+  text-align: right;
+
+  @include bs-mq() {
+    text-align: center;
+  }
+
+  a {
+    transition: all 300ms;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    padding: 8px 40px;
+    font-size: 9px;
+    background-color: #001800;
+    color: #fff !important;
+    text-decoration: none;
+    @include bs-mq() {
+      font-size: 12px;
+      padding: 12px 60px;
+    }
+
+    &:link,
+    &:visited {
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: #555;
+    }
+  }
+}
+
+/* Bge Contents
+----------------------------------------------- */
+
+#Home .bge-contents {
+  margin-bottom: 100px;
+}
