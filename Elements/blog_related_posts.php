@@ -34,9 +34,10 @@ $relatedPosts = $this->Blog->getRelatedPosts($post, ['recursive' => 1]);
 							endif;
 							?>
 							<?php echo $this->Blog->getEyeCatch($relatedPost, [
-								'link' => true,
+								'link' => false,
 								'class' => 'bs-blog-post__item-eye-catch',
 								'noimage' => '/img/noimage.png',
+								'width' => '300',
 							]); ?>
 						</figure>
 						<div class="bs-blog-post__item-content">

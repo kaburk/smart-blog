@@ -30,9 +30,10 @@
 						endif;
 						?>
 						<?php echo $this->Blog->getEyeCatch($post, [
-							'link' => true,
+							'link' => false,
 							'class' => 'bs-blog-post__item-eye-catch',
 							'noimage' => '/img/noimage.png',
+							'width' => '300',
 						]); ?>
 					</figure>
 					<div class="bs-blog-post__item-content">

@@ -16,7 +16,7 @@ $(function(){
     let isOpenedMenu = false;
     var menuButton = $("#BsMenuBtn");
     menuButton.click(clickMenuBtn);
-	$("#MainImage").show().bxSlider({mode:"fade", auto:true});
+	// $("#MainImage").show().bxSlider({mode:"fade", auto:true});
 	$("a[rel='colorbox']").colorbox({transition:"fade", maxWidth:"80%"});
 	$(".bs-header__nav.use-mega-menu").accessibleMegaMenu({
 		uuidPrefix: "accessible-megamenu",

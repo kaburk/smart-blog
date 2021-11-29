@@ -8,7 +8,11 @@
 
 // meta 各種
 //$title = $this->BcBaser->getTitle(' | ', ['tag' => false]);
-$title = $this->BcBaser->getContentsTitle() . ' | ' . h($this->BcBaser->getSiteName());
+if ($this->BcBaser->isHome()) {
+	$title = h($this->BcBaser->getSiteName());
+} else {
+	$title = h($this->BcBaser->getContentsTitle()) . ' | ' . h($this->BcBaser->getSiteName());
+}
 $description = h(preg_replace('[\n|\r|\r\n|\t]', '', strip_tags($this->BcBaser->getDescription())));
 $fullUrl = h($this->BcBaser->getUri($this->BcBaser->getHere()));
 
@@ -49,6 +53,7 @@ if ($image) {
 <meta name="description" content="<?php echo $description ?>">
 <?php $this->BcBaser->metaKeywords() ?>
 <title><?php echo $title ?></title>
+<?php $this->BcBaser->icon() ?>
 
 <?php /* OGP */ ?>
 <meta property="og:type" content="<?php echo $ogType ?>">
@@ -58,6 +63,8 @@ if ($image) {
 <meta property="og:image" content="<?php echo $image ?>">
 <meta property="og:site_name" content="<?php echo h($this->BcBaser->getSiteName()) ?>">
 <meta property="og:locale" content="ja_JP">
+<meta property="fb:app_id" content="2192137084154983">
+
 <?php /*
 // Facebookインサイトを利用したい場合は、Facebook for DevelopersからアプリIDを取得して下記にセット下さい。
 <meta property="fb:app_id" content="FacebookアプリID">
@@ -102,6 +109,7 @@ if ($image) {
 <meta property="twitter:url" content="<?php echo $fullUrl ?>">
 <meta name="twitter:image" content="<?php echo $image ?>">
 <meta name="twitter:domain" content="<?php echo env('HTTP_HOST') ?>">
+<meta name="twitter:site" content="@chibimegane88">
 <?php /*
 // Twitterアカウントをお持ちの方は下記にアカウント名を設定してください
 <meta name="twitter:site" content="@TWITTER_ACCOUNT_NAME">

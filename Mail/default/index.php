@@ -1,4 +1,5 @@
 <?php
+
 /**
  * baserCMS :  Based Website Development Project <https://basercms.net>
  * Copyright (c) baserCMS Users Community <https://basercms.net/community/>
@@ -16,6 +17,13 @@
  *
  * @var BcAppView $this
  */
+// $this->BcBaser->css([
+// 	'jquery-ui/jquery-ui-1.11.4',
+// ], ['inline' => true]);
+// $this->BcBaser->js([
+// 	'jquery-ui-1.11.4.min',
+// 	'i18n/ui.datepicker-ja',
+// ], true);
 ?>
 
 
@@ -23,7 +31,7 @@
 
 <h3 class="bs-mail-title-sub"><?php echo __('入力フォーム') ?></h3>
 
-<?php if ($this->Mail->descriptionExists()): ?>
+<?php if ($this->Mail->descriptionExists()) : ?>
 	<div class="bs-mail-description"><?php $this->Mail->description() ?></div>
 <?php endif ?>
 
@@ -32,4 +40,3 @@
 	<!-- /Elements/mail_form.php -->
 	<?php $this->BcBaser->element('mail_form') ?>
 </div>
-

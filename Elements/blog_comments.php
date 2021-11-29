@@ -41,17 +41,12 @@
 			'type' => 'hidden',
 			'value' => $captchaId
 		]) ?>
-		<?php echo $this->BcForm->input('BlogComment.email', [
-			'type' => 'hidden',
-			'value' => 'comment@example.com'
-		]) ?>
 
 		<table class="bs-blog-comment__form">
 			<tr>
 				<th><?php echo $this->BcForm->label('BlogComment.name', __('お名前') . ' / ' . __('ニックネーム')) ?><span class="required">必須</span></th>
 				<td><?php echo $this->BcForm->input('BlogComment.name', ['type' => 'text', 'required' => false]) ?></td>
 			</tr>
-			<?php /* ?>
 			<tr>
 				<th><?php echo $this->BcForm->label('BlogComment.email', __('メールアドレス')) ?><span class="required">必須</span></th>
 				<td>
@@ -59,7 +54,6 @@
 					<br><small>※ <?php echo __('メールアドレスは公開されません') ?></small>
 				</td>
 			</tr>
-			<?php */ ?>
 			<tr>
 				<th><?php echo $this->BcForm->label('BlogComment.url', 'URL') ?><span class="normal">任意</span></th>
 				<td><?php echo $this->BcForm->input('BlogComment.url', ['type' => 'text', 'size' => 30, 'required' => false]) ?></td>

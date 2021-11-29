@@ -44,10 +44,14 @@ $this->BcBaser->setDescription($this->Blog->getPostContent($post, false, false, 
 	</div>
 	<?php if ($this->Blog->getEyeCatch($post)) : ?>
 		<div class="bs-single-post__eye-catch">
-			<?php $this->Blog->eyeCatch($post) ?>
+			<?php $this->Blog->eyeCatch($post, [
+				'link' => false,
+				'imgsize' => 'default',
+				'width' => '600',
+			]) ?>
 		</div>
 	<?php endif ?>
-	<?php $this->Blog->postContent($post) ?>
+	<?php echo $post['BlogPost']['detail'] ?>
 	<div class="bs-single-post__sns-share bs-single-post__sns-share-bottom">
 		<?php $this->BcBaser->element('blog_post_sns_share') ?>
 	</div>

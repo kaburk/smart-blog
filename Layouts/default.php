@@ -14,26 +14,37 @@
 	<?php $this->BcBaser->icon() ?>
 	<?php $this->BcBaser->css([
 		'style',
-		'jquery-ui/jquery-ui-1.11.4',
+		// 'jquery-ui/jquery-ui-1.11.4',
 		'colorbox/colorbox-1.6.1',
 		'editor',
-		'//use.fontawesome.com/releases/v5.15.4/css/all.css',
 	]) ?>
 	<?php $this->BcBaser->js([
 		'jquery-1.11.3.min',
-		'jquery-ui-1.11.4.min',
-		'jquery.bxslider-4.12.min',
+		// 'jquery-ui-1.11.4.min',
+		// 'i18n/ui.datepicker-ja',
+		// 'jquery.bxslider-4.12.min',
 		'jquery.colorbox-1.6.1.min',
-		'i18n/ui.datepicker-ja',
 		'jquery-accessibleMegaMenu',
 		'startup',
 	]); ?>
-	<?php $this->BcBaser->scripts() ?>
+	<?php
+	if (BcUtil::loginUser()) :
+		$this->BcBaser->css([
+			'jquery-ui/jquery-ui-1.11.4',
+		]);
+		$this->BcBaser->js([
+			'jquery-ui-1.11.4.min',
+			'i18n/ui.datepicker-ja',
+		]);
+	endif;
+	?>
 
 	<!-- Preload -->
 	<link rel="preload" as="font" type="font/woff" href="//use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff2" crossorigin>
 	<link rel="preload" as="font" type="font/woff" href="//use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff2" crossorigin>
 	<link rel="preload" as="font" type="font/woff" href="//use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2" crossorigin>
+
+	<?php $this->BcBaser->scripts() ?>
 
 	<?php $this->BcBaser->element('json_id') ?>
 
@@ -83,6 +94,9 @@
 
 	</div>
 
+	<?php $this->BcBaser->css([
+		'//use.fontawesome.com/releases/v5.15.4/css/all.css',
+	]) ?>
 	<?php $this->BcBaser->func() ?>
 
 </body>
