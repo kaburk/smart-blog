@@ -39,7 +39,7 @@ if ($this->BcBaser->isBlogSingle()) {
 		$image = $this->BcBaser->getUri($image);
 	}
 	$author = $this->BcBaser->getUserName($post['User']);
-	$blogUrl = $this->BcBaser->getContentsUrl($post['Content']['url']);
+	$blogUrl = $this->BcBaser->getContentsUrl($this->request->params['Content']['url']);
 	$jsonLd = [
 		'@context' => 'https://schema.org',
 		'@type' => 'NewsArticle',
@@ -55,7 +55,7 @@ if ($this->BcBaser->isBlogSingle()) {
 			'height' => 240
 		],
 		"author" => [
-			'url' => h($this->BcBaser->getUri($post['Content']['url'] . 'archives/author/' . $post['User']['name'])),
+			'url' => h($this->BcBaser->getUri($blogUrl . 'archives/author/' . $post['User']['name'])),
 			"@type" => "Person",
 			"name" => $author,
 		],

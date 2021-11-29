@@ -51,6 +51,9 @@ if ($this->Blog->isHome()) {
 			} elseif ($this->BcArray->last($posts, $key)) {
 				$class[] = 'last';
 			}
+			if ($key > 0 && $key % 5 == 0) :
+				$this->BcBaser->element('adsense_index');
+			endif;
 			?>
 			<li class="<?php echo implode(' ', $class) ?>">
 				<article id="bs-blog-post-<?php echo $post['BlogPost']['id'] ?>" class="bs-blog-post__item-article">
@@ -97,6 +100,12 @@ if ($this->Blog->isHome()) {
 				</a>
 			</li>
 		<?php endforeach; ?>
+
+		<?php
+		if ($key >= 9) :
+			$this->BcBaser->element('adsense_index');
+		endif;
+		?>
 	</ul>
 <?php else : ?>
 	<p class="bs-blog-post-no-data">

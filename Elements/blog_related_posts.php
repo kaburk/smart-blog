@@ -20,6 +20,9 @@ $relatedPosts = $this->Blog->getRelatedPosts($post, ['recursive' => 1]);
 				} elseif ($this->BcArray->last($posts, $key)) {
 					$class[] = 'last';
 				}
+				if ($key > 0 && $key % 3 == 0) :
+					$this->BcBaser->element('adsense_index');
+				endif;
 				?>
 				<li class="<?php echo implode(' ', $class) ?>">
 					<article id="bs-blog-post-<?php echo $relatedPost['BlogPost']['id'] ?>" class="bs-blog-post__item-article">

@@ -1181,7 +1181,7 @@ table.cake-sql-log {
 /* Bge Contents
 ----------------------------------------------- */
 #Home .bge-contents {
-  margin-bottom: 100px; }
+  margin-bottom: 50px; }
 
 /**
  * Blog
@@ -1211,12 +1211,16 @@ table.cake-sql-log {
 .bs-blog-post {
   margin: 0 0 20px 0 !important;
   padding: 0 !important; }
+  .bs-blog-post .adsbygoogle {
+    border-bottom: 1px solid #ddd;
+    padding: 40px 0 !important; }
   .bs-blog-post__item {
     border-bottom: 1px solid #ddd;
     margin: 0 !important;
-    padding: 10px 0 10px !important;
+    padding: 40px 0 !important;
     list-style: none;
-    font-size: 14px; }
+    font-size: 14px;
+    min-height: 220px; }
     .bs-blog-post__item::before {
       content: none !important; }
     .bs-blog-post__item a {
@@ -1244,7 +1248,7 @@ table.cake-sql-log {
     .bs-blog-post__item-category {
       position: absolute;
       left: 0px;
-      top: 24px;
+      top: 54px;
       font-size: 12px;
       padding: 2px 5px;
       white-space: nowrap;
@@ -1285,11 +1289,16 @@ table.cake-sql-log {
       margin-right: 10px; }
       .bs-blog-post__item-tag a {
         color: #333 !important; }
+  .bs-blog-post__item.first {
+    padding-top: 0 !important; }
 
 /* Blog Single Post
 ----------------------------------------------- */
 .bs-single-post {
   margin-bottom: 80px; }
+  .bs-single-post .adsbygoogle {
+    margin-top: 80px;
+    margin-bottom: 80px; }
   .bs-single-post__meta {
     text-align: right;
     margin-bottom: 30px; }

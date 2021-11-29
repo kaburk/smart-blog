@@ -72,7 +72,7 @@
 			<main class="bs-main-contents">
 				<?php $this->BcBaser->flash() ?>
 
-				<?php $this->BcBaser->content() ?>
+				<?php $this->BcBaser->content(); ?>
 
 				<?php if ($this->BcBaser->isHome()) : ?>
 					<div class="bs-info">
