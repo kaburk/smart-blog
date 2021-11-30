@@ -680,16 +680,6 @@ i {
         color: #555 !important; }
       .bs-widget-area ul li a:visited {
         color: #888 !important; }
-    .bs-widget-area ul li:before {
-      display: block;
-      content: "";
-      position: absolute;
-      top: 9px;
-      left: 1px;
-      width: 6px;
-      height: 6px;
-      background: #181818;
-      border-radius: 50%; }
   .bs-widget-area ul ul {
     margin: 0 0 0 1.8em; }
     .bs-widget-area ul ul:first-child {
