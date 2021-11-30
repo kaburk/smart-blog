@@ -52,11 +52,11 @@ $this->BcBaser->setDescription($this->Blog->getPostContent($post, false, false, 
 		</div>
 	<?php endif ?>
 
-	<?php $this->BcBaser->element('adsense_single'); ?>
+	<?php echo $this->SmartBlog->getConfig('adsense_single'); ?>
 
 	<?php echo $post['BlogPost']['detail'] ?>
 
-	<?php $this->BcBaser->element('adsense_single'); ?>
+	<?php echo $this->SmartBlog->getConfig('adsense_single'); ?>
 
 	<div class="bs-single-post__sns-share bs-single-post__sns-share-bottom">
 		<?php $this->BcBaser->element('blog_post_sns_share') ?>

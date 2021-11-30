@@ -63,12 +63,12 @@ if ($image) {
 <meta property="og:image" content="<?php echo $image ?>">
 <meta property="og:site_name" content="<?php echo h($this->BcBaser->getSiteName()) ?>">
 <meta property="og:locale" content="ja_JP">
-<meta property="fb:app_id" content="2192137084154983">
-
-<?php /*
-// Facebookインサイトを利用したい場合は、Facebook for DevelopersからアプリIDを取得して下記にセット下さい。
-<meta property="fb:app_id" content="FacebookアプリID">
-*/ ?>
+<?php
+$facebookAppId = $this->SmartBlog->getConfig('facebook_app_id');
+if ($facebookAppId) :
+?>
+	<meta property="fb:app_id" content="<?php echo $facebookAppId ?>">
+<?php endif; ?>
 
 <?php if ($this->BcBaser->isBlogSingle()) : ?>
 	<?php
@@ -109,11 +109,12 @@ if ($image) {
 <meta property="twitter:url" content="<?php echo $fullUrl ?>">
 <meta name="twitter:image" content="<?php echo $image ?>">
 <meta name="twitter:domain" content="<?php echo env('HTTP_HOST') ?>">
-<meta name="twitter:site" content="@chibimegane88">
-<?php /*
-// Twitterアカウントをお持ちの方は下記にアカウント名を設定してください
-<meta name="twitter:site" content="@TWITTER_ACCOUNT_NAME">
-*/ ?>
+<?php
+$twitterAccount = $this->SmartBlog->getConfig('twitter_account');
+if ($twitterAccount) :
+?>
+	<meta name="twitter:site" content="<?php echo $twitterAccount ?>">
+<?php endif; ?>
 
 <?php /* サムネイル画像（スマホなどで表示する） */ ?>
 <meta name="thumbnail" content="<?php echo h($this->BcBaser->getUri('/img/screenshot.png')); ?>">

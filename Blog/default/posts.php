@@ -17,7 +17,7 @@
 				$class[] = 'last';
 			}
 			if ($key > 0 && $key % 3 == 0) :
-				$this->BcBaser->element('adsense_index');
+				echo $this->SmartBlog->getConfig('adsense_index');
 			endif;
 			?>
 			<li class="<?php echo implode(' ', $class) ?>">
