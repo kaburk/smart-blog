@@ -47,10 +47,10 @@ $relatedPosts = $this->Blog->getRelatedPosts($post, ['recursive' => 1]);
 							<h2 class="bs-blog-post__item-h2">
 								<?php echo $this->Blog->getPostTitle($relatedPost, true, ['class' => 'bs-blog-post__item-title']) ?>
 							</h2>
-							<?php if (strip_tags($relatedPost['BlogPost']['content'] . $relatedPost['BlogPost']['detail'])) : ?>
+							<?php if (strip_tags($relatedPost['BlogPost']['content'])) : ?>
 								<div class="bs-blog-post__item-detail">
 									<a href="<?php echo $this->Blog->getPostLinkUrl($relatedPost) ?>">
-										<?php echo $this->Blog->getPostContent($relatedPost, true, false, 200, '...') ?>
+										<?php echo $this->BcText->truncate(nl2br(strip_tags($relatedPost['BlogPost']['content'])), 200) ?>
 									</a>
 								</div>
 							<?php endif; ?>

@@ -43,10 +43,10 @@
 						<h2 class="bs-blog-post__item-h2">
 							<?php echo $this->Blog->getPostTitle($post, true, ['class' => 'bs-blog-post__item-title']) ?>
 						</h2>
-						<?php if (strip_tags($post['BlogPost']['content'] . $post['BlogPost']['detail'])) : ?>
+						<?php if (strip_tags($post['BlogPost']['content'])) : ?>
 							<div class="bs-blog-post__item-detail">
 								<a href="<?php echo $this->Blog->getPostLinkUrl($post) ?>">
-									<?php echo $this->Blog->getPostContent($post, true, false, 200, '...') ?>
+									<?php echo $this->BcText->truncate(nl2br(strip_tags($post['BlogPost']['content'])), 200) ?>
 								</a>
 							</div>
 						<?php endif; ?>
