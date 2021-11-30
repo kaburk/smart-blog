@@ -52,7 +52,7 @@ if ($this->Blog->isHome()) {
 				$class[] = 'last';
 			}
 			if ($key > 0 && $key % 5 == 0) :
-				$this->SmartBlog->getConfig('adsense_index');
+				echo $this->SmartBlog->getConfig('adsense_index');
 			endif;
 			?>
 			<li class="<?php echo implode(' ', $class) ?>">

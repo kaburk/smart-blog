@@ -156,6 +156,58 @@
 				<?php echo $this->BcForm->error('SmartBlogConfig.adsense_single') ?>
 			</td>
 		</tr>
+	</table>
+
+	<h2 class="bca-main__heading" data-bca-heading-size="lg"><?php echo __d('baser', 'DNSプリフェッチ') ?></h2>
+
+	<table class="form-table bca-form-table section" data-bca-table-type="type2">
+		<tr>
+			<th class="col-head bca-form-table__label">
+				<?php echo $this->BcForm->label('SmartBlogConfig.dns_prefetch', __d('baser', 'ドメイン一覧')) ?>
+			</th>
+			<td class="col-input bca-form-table__input">
+				<?php
+				echo $this->BcForm->input(
+					'SmartBlogConfig.dns_prefetch',
+					[
+						'type' => 'textarea',
+						'rows' => 10,
+						'cols' => 100,
+						'autofocus' => true,
+						'class' => 'bca-textbox__input',
+						'placeholder' => 'DNSプリフェッチするドメインを貼り付けてください。',
+						'default' => '
+www.googletagmanager.com
+www.google-analytics.com
+ajax.googleapis.com
+cdnjs.cloudflare.com
+pagead2.googlesyndication.com
+googleads.g.doubleclick.net
+tpc.googlesyndication.com
+ad.doubleclick.net
+www.gstatic.com
+cse.google.com
+fonts.gstatic.com
+fonts.googleapis.com
+
+cms.quantserve.com
+secure.gravatar.com
+cdn.syndication.twimg.com
+cdn.jsdelivr.net
+images-fe.ssl-images-amazon.com
+completion.amazon.com
+m.media-amazon.com
+i.moshimo.com
+aml.valuecommerce.com
+dalc.valuecommerce.com
+dalb.valuecommerce.com
+',
+					]
+				);
+				?>
+				<?php echo $this->BcForm->error('SmartBlogConfig.dns_prefetch') ?>
+			</td>
+		</tr>
 
 		<?php echo $this->BcForm->dispatchAfterForm('option') ?>
 	</table>

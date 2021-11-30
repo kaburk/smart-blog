@@ -13,7 +13,6 @@ if ($this->BcBaser->isBlogSingle()) {
 } elseif ($this->BcBaser->isBlog()) {
 	$jsonLdType = 'blog';
 }
-/* JSON-LD 構造化データマークアップ 表示 */
 
 if ($this->BcBaser->isBlogSingle()) {
 	$image = '/img/ogp.png';
@@ -59,16 +58,6 @@ if ($this->BcBaser->isBlogSingle()) {
 			"@type" => "Person",
 			"name" => $author,
 		],
-		// "publisher" => [
-		// 	"@type" => "Organization",
-		// 	"name" => "Hikkoshi Samurai",
-		// 	"logo" => [
-		// 		"@type" => "ImageObject",
-		// 		"url" => "https://site-name.jp/logo.png",
-		// 		"width" => 600,
-		// 		"height" => 60
-		// 	]
-		// ],
 		"description" => h(preg_replace('[\n|\r|\r\n|\t]', '', strip_tags($this->BcBaser->getDescription()))),
 	];
 	if (!empty($post['BlogPost']['publish_start'])) :
@@ -76,9 +65,6 @@ if ($this->BcBaser->isBlogSingle()) {
 	else :
 		$jsonLd['datePublished'] = gmdate('Y-m-d\TH:i:s\+09:00', strtotime($post['BlogPost']['posts_date']));
 	endif;
-	// if (!empty($post['BlogPost']['publish_end'])) :
-	// 	$jsonLd['datePublished'] = gmdate('Y-m-d\TH:i:s\+09:00', strtotime($post['BlogPost']['publish_end']));
-	// endif;
 	$jsonLd['dateModified'] = gmdate('Y-m-d\TH:i:s\+09:00', strtotime($post['BlogPost']['modified']));
 } else {
 	$jsonLd = [
