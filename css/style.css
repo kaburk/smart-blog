@@ -1260,7 +1260,7 @@ table.cake-sql-log {
       @media screen and (max-width: 768px) {
         .bs-blog-post__item-category {
           left: 0px;
-          top: 10px; } }
+          top: 40px; } }
     .bs-blog-post__item h2 {
       margin: 0px !important; }
     .bs-blog-post__item-title {
@@ -1289,8 +1289,6 @@ table.cake-sql-log {
       margin-right: 10px; }
       .bs-blog-post__item-tag a {
         color: #333 !important; }
-  .bs-blog-post__item.first {
-    padding-top: 0 !important; }
 
 /* Blog Single Post
 ----------------------------------------------- */

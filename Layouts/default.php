@@ -1,4 +1,11 @@
-<?php $this->BcBaser->docType('html5') ?>
+<?php
+
+/**
+ * デフォルトレイアウト
+ *
+ * @var BcAppView $this
+ */
+$this->BcBaser->docType('html5') ?>
 <html lang="ja">
 
 <head>
@@ -13,18 +20,14 @@
 
 	<?php $this->BcBaser->icon() ?>
 	<?php $this->BcBaser->css([
-		'style',
-		// 'jquery-ui/jquery-ui-1.11.4',
 		'colorbox/colorbox-1.6.1',
 		'editor',
+		'style',
 	]) ?>
 	<?php $this->BcBaser->js([
 		'jquery-1.11.3.min',
-		// 'jquery-ui-1.11.4.min',
-		// 'i18n/ui.datepicker-ja',
-		// 'jquery.bxslider-4.12.min',
 		'jquery.colorbox-1.6.1.min',
-		'jquery-accessibleMegaMenu',
+		'jquery-accessibleMegaMenu.min',
 		'startup',
 	]); ?>
 	<?php
@@ -72,12 +75,18 @@
 			<main class="bs-main-contents">
 				<?php $this->BcBaser->flash() ?>
 
-				<?php $this->BcBaser->content(); ?>
-
 				<?php if ($this->BcBaser->isHome()) : ?>
+					<?php
+					$content = $this->BcBaser->getContent();
+					if ($content) :
+						echo $content;
+					endif;
+					?>
 					<div class="bs-info">
 						<?php $this->BcBaser->blogPosts('blog', 5) ?>
 					</div>
+				<?php else : ?>
+					<?php $this->BcBaser->content(); ?>
 				<?php endif ?>
 
 				<?php $this->BcBaser->contentsNavi() ?>
@@ -97,6 +106,7 @@
 	<?php $this->BcBaser->css([
 		'//use.fontawesome.com/releases/v5.15.4/css/all.css',
 	]) ?>
+
 	<?php $this->BcBaser->func() ?>
 
 </body>
