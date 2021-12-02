@@ -49,7 +49,7 @@ $this->BcBaser->docType('html5') ?>
 
 	<?php $this->BcBaser->scripts() ?>
 
-	<?php $this->BcBaser->element('json_id') ?>
+	<?php $this->BcBaser->element('json_ld') ?>
 
 	<?php $this->BcBaser->googleAnalytics() ?>
 	<?php $this->BcBaser->element('google_tag_manager') ?>
