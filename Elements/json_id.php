@@ -65,7 +65,9 @@ if ($this->BcBaser->isBlogSingle()) {
 	else :
 		$jsonLd['datePublished'] = gmdate('Y-m-d\TH:i:s\+09:00', strtotime($post['BlogPost']['posts_date']));
 	endif;
-	$jsonLd['dateModified'] = gmdate('Y-m-d\TH:i:s\+09:00', strtotime($post['BlogPost']['modified']));
+	if (!empty($post['BlogPost']['modified'])) :
+		$jsonLd['dateModified'] = gmdate('Y-m-d\TH:i:s\+09:00', strtotime($post['BlogPost']['modified']));
+	endif;
 } else {
 	$jsonLd = [
 		'@context' => 'https://schema.org',

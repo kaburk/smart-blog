@@ -85,7 +85,9 @@ if ($facebookAppId) :
 	<?php if (!empty($post['BlogPost']['publish_end'])) : ?>
 		<meta property="article:expiration_time" content="<?php echo gmdate('Y-m-d\TH:i:s\+09:00', strtotime($post['BlogPost']['publish_end'])) ?>">
 	<?php endif ?>
-	<meta property="article:modified_time" content="<?php echo gmdate('Y-m-d\TH:i:s\+09:00', strtotime($post['BlogPost']['modified'])) ?>">
+	<?php if (!empty($post['BlogPost']['modified'])) : ?>
+		<meta property="article:modified_time" content="<?php echo gmdate('Y-m-d\TH:i:s\+09:00', strtotime($post['BlogPost']['modified'])) ?>">
+	<?php endif ?>
 	<?php if ($author) : ?>
 		<meta property="article:author" content="<?php echo $author ?>">
 	<?php endif; ?>
