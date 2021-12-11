@@ -51,10 +51,22 @@
 							</div>
 						<?php endif; ?>
 						<div class="bs-blog-post__item-meta">
-							<span class="bs-blog-post__item-tag">
-								<i class="fas fa-tags"></i>
-								<?php $this->Blog->tag($post, ['class' => 'bs-blog-post__item-category']) ?>
-							</span>
+							<?php if (!empty($post['BlogContent']['tag_use'])) : ?>
+								<span class="bs-blog-post__item-tag">
+									<?php
+									$tags = $this->Blog->getTag($post, ['link' => false]);
+									if ($tags) :
+										foreach ($tags as $tag) :
+											$this->BcBaser->link(
+												'<i class="fas fa-tags"></i> ' . $tag['name'],
+												$tag['url'],
+												['class' => 'bs-single-post__meta-tag']
+											);
+										endforeach;
+									endif;
+									?>
+								</span>
+							<?php endif; ?>
 							<span class="bs-blog-post__item-date">
 								<i class="far fa-clock"></i>
 								<?php $this->Blog->postDate($post, 'Y/m/d H:i') ?>

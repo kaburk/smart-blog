@@ -26,15 +26,17 @@ $this->BcBaser->setDescription($this->Blog->getPostContent($post, false, false, 
 				['class' => 'bs-single-post__meta-category']
 			);
 		endif;
-		$tags = $this->Blog->getTag($post, ['link' => false]);
-		if ($tags) :
-			foreach ($tags as $tag) :
-				$this->BcBaser->link(
-					'<i class="fas fa-tags"></i> ' . $tag['name'],
-					$tag['url'],
-					['class' => 'bs-single-post__meta-tag']
-				);
-			endforeach;
+		if (!empty($post['BlogContent']['tag_use'])) :
+			$tags = $this->Blog->getTag($post, ['link' => false]);
+			if ($tags) :
+				foreach ($tags as $tag) :
+					$this->BcBaser->link(
+						'<i class="fas fa-tags"></i> ' . $tag['name'],
+						$tag['url'],
+						['class' => 'bs-single-post__meta-tag']
+					);
+				endforeach;
+			endif;
 		endif;
 		?>
 		<span class="bs-single-post__meta-date">
