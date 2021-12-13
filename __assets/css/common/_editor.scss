@@ -15,6 +15,7 @@ $breakPoint: 768px;
 .bge-contents,
 .cke_editable {
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 18px;
   color: #333;
 
   h1 {
@@ -528,5 +529,20 @@ $breakPoint: 768px;
 
   optgroup option {
     padding-left: 20px;
+  }
+
+  .rakuten {
+    table {
+      border: none;
+      tr {
+        border: none;
+      }
+      td {
+        border: none;
+        > div {
+          width: 100% !important;
+        }
+      }
+    }
   }
 }

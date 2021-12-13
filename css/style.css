@@ -427,7 +427,7 @@ i {
   .bs-header__menu-button {
     display: none;
     position: absolute;
-    top: 24px;
+    top: 40px;
     right: 20px;
     width: 36px;
     height: 28px;
@@ -651,7 +651,7 @@ i {
 
 .bs-widget-area h2 {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
   padding: 10px 0 10px 0;
   margin: 0; }
   .bs-widget-area h2:nth-of-type(1) {
@@ -665,7 +665,7 @@ i {
   .bs-widget-area ul:first-child {
     margin-top: 0; }
   .bs-widget-area ul li {
-    font-size: 14px;
+    font-size: 18px;
     list-style-position: inside;
     position: relative;
     padding: 0 0 0 25px;
@@ -674,12 +674,11 @@ i {
     overflow: hidden; }
     .bs-widget-area ul li a {
       zoom: 1;
-      color: #333; }
+      color: #333;
+      text-decoration: none; }
       .bs-widget-area ul li a:hover {
-        text-decoration: none;
-        color: #555 !important; }
-      .bs-widget-area ul li a:visited {
-        color: #888 !important; }
+        color: #ccc !important;
+        text-decoration: underline; }
   .bs-widget-area ul ul {
     margin: 0 0 0 1.8em; }
     .bs-widget-area ul ul:first-child {
@@ -692,7 +691,7 @@ i {
   border-top: 1px solid #ddd;
   padding-left: 0; }
   .bs-widget-text ul li {
-    font-size: 14px;
+    font-size: 18px;
     padding: 0;
     border-bottom: 1px solid #ddd;
     line-height: 25px;
@@ -701,7 +700,7 @@ i {
       padding: 10px 22px;
       transition: all 300ms;
       display: block;
-      color: #000;
+      color: #333;
       text-decoration: none; }
       @media screen and (max-width: 768px) {
         .bs-widget-text ul li a {
@@ -1183,8 +1182,13 @@ table.cake-sql-log {
 .bs-blog-category-title,
 .bs-blog-post-title {
   padding: 0 !important;
-  background: none !important;
-  font-size: 24px !important; }
+  background: none !important; }
+  @media screen and (max-width: 768px) {
+    .bs-blog-title,
+    .bs-single-post-title,
+    .bs-blog-category-title,
+    .bs-blog-post-title {
+      font-size: 24px !important; } }
 
 /* Blog Post Title
 ----------------------------------------------- */
@@ -1209,7 +1213,7 @@ table.cake-sql-log {
     margin: 0 !important;
     padding: 40px 0 !important;
     list-style: none;
-    font-size: 14px;
+    font-size: 16px;
     min-height: 220px; }
     .bs-blog-post__item::before {
       content: none !important; }
@@ -1279,6 +1283,14 @@ table.cake-sql-log {
       margin-right: 10px; }
       .bs-blog-post__item-tag a {
         color: #333 !important; }
+      @media screen and (max-width: 768px) {
+        .bs-blog-post__item-tag {
+          display: block;
+          margin: 10px 0;
+          padding: 10px 0; } }
+    @media screen and (max-width: 768px) {
+      .bs-blog-post__item-date {
+        display: block; } }
 
 /* Blog Single Post
 ----------------------------------------------- */
@@ -1316,7 +1328,7 @@ table.cake-sql-log {
       padding: 5px 10px;
       margin-right: 5px;
       white-space: nowrap;
-      background-color: #fff;
+      background-color: #ffffff;
       border: 1px solid #333;
       border-radius: 2px;
       color: #333 !important;
@@ -1326,10 +1338,12 @@ table.cake-sql-log {
       padding-right: 10px;
       font-size: 13px;
       letter-spacing: 0;
-      color: #a0a2a8;
+      color: #333;
       font-style: italic; }
       @media screen and (max-width: 768px) {
         .bs-single-post__meta-date {
+          display: block;
+          padding-top: 20px;
           padding-left: 10px; } }
   .bs-single-post__eye-catch img {
     transition: all 300ms;

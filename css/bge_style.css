@@ -25,6 +25,7 @@
 .bge-contents,
 .cke_editable {
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 18px;
   color: #333; }
   .bs-main-contents h1,
   .bge-contents h1,
@@ -666,6 +667,27 @@
 .cke_editable optgroup option,
 .bs-sub-contents optgroup option {
   padding-left: 20px; }
+
+.bs-main-contents .rakuten table,
+.bge-contents .rakuten table,
+.cke_editable .rakuten table,
+.bs-sub-contents .rakuten table {
+  border: none; }
+  .bs-main-contents .rakuten table tr,
+  .bge-contents .rakuten table tr,
+  .cke_editable .rakuten table tr,
+  .bs-sub-contents .rakuten table tr {
+    border: none; }
+  .bs-main-contents .rakuten table td,
+  .bge-contents .rakuten table td,
+  .cke_editable .rakuten table td,
+  .bs-sub-contents .rakuten table td {
+    border: none; }
+    .bs-main-contents .rakuten table td > div,
+    .bge-contents .rakuten table td > div,
+    .cke_editable .rakuten table td > div,
+    .bs-sub-contents .rakuten table td > div {
+      width: 100% !important; }
 
 /**
  * 変数
